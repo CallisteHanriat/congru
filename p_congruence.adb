@@ -18,6 +18,18 @@ end congruence;
 function fermatpossible(couple:in tr_couple) return boolean is
 --traite un couple et retourne vrai ou faux si on peut utiliser fermat. 
 begin
-
+	return (couple.value mod couple.modulo /= 0) and nombrepremier(couple.modulo)
 end fermatpossible;
+----------------------------
+function nombrepremier (val : in integer) return boolean is
+--traite une valeur et retourne vrai si elle est premier ou faux.
+begin
+	while i<val-1 and then val mod i /= 0 loop
+		i:=i+1;
+	end loop;
+	if i<val-1 then
+		return false;
+	else	return true;
+	end if;
+end nombrepremier;
 end p_congruence;

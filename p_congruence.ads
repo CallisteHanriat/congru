@@ -19,4 +19,6 @@ function congruence (val : in integer; modulo: in integer) return integer;
 function fermatpossible (couple : in tr_couple) return boolean;
 --traite un couple et retourne vrai ou faux si on peut utiliser fermat. 
 
+function nombrepremier (val : in integer) return boolean;
+--traite une valeur et retourne vrai si elle est premier ou faux.
 end p_congruence;
