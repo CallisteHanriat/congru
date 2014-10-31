@@ -3,16 +3,20 @@ Use ada.Text_IO;
 
 package body p_congruence is
 
-function traitement1 (couple : in tr_couple) return integer is
+procedure traitement1 (couple : in tr_couple) is
 --traite le couple, pour retourner congru.
 begin
-	
+	if couple.value**couple.puissance < 2**31 then
+		put("votre congruence pour : ");
+		new_line;
+		put(couple.value); put(" puissance "); put(couple.puissance); put(" congru "); put(congruence(couple.value, couple.modulo)); put("[");put(couple.modulo);put("]");
+	end if;
 end traitement1;
 ----------------------------
 function congruence (val : in integer; modulo: in integer) return integer is
 --traite une val, pour ressortir la congruence [modulo].
 begin
-	
+	return val mod modulo;
 end congruence;
 ----------------------------
 function fermatpossible(couple:in tr_couple) return boolean is
