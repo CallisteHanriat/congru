@@ -1,7 +1,6 @@
-with ada.text_io ;
-use ada.text_io ;
 
-package p_congruence.ads is
+
+package p_congruence is
 --type declaration tr_couple. 
 type tr_couple is record
 	value : integer;
@@ -10,7 +9,7 @@ type tr_couple is record
 	modulo : integer;
 end record;
 
-procedure traitement1 (couple: in tr_couple);
+procedure traitement1 (c: in tr_couple);
 --traite le couple, pour retourner congru.
 
 function congruence (val : in integer; modulo: in integer) return integer;

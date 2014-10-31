@@ -1,15 +1,19 @@
-With ada.Text_IO; 
-Use ada.Text_IO;
+With ada.Text_IO, Ada.Integer_Text_IO; 
+Use ada.Text_IO, Ada.Integer_Text_IO ;
 
 package body p_congruence is
 
-procedure traitement1 (couple : in tr_couple) is
+procedure traitement1 (c : in tr_couple) is
 --traite le couple, pour retourner congru.
+couple : tr_couple;
 begin
-	if couple.value**couple.puissance < 2**31 then
+	couple.value := 5**3;
+	couple.puiss := 1;
+	couple.modulo := 5;
+	if couple.value**couple.puiss < 2**30 then
 		put("votre congruence pour : ");
 		new_line;
-		put(couple.value); put(" puissance "); put(couple.puissance); put(" congru "); put(congruence(couple.value, couple.modulo)); put("[");put(couple.modulo);put("]");
+		put(couple.value); put(" puissance "); put(couple.puiss); put(" congru "); put(congruence(couple.value, couple.modulo)); put("[");put(couple.modulo);put("]");
 	end if;
 end traitement1;
 ----------------------------
@@ -22,11 +26,12 @@ end congruence;
 function fermatpossible(couple:in tr_couple) return boolean is
 --traite un couple et retourne vrai ou faux si on peut utiliser fermat. 
 begin
-	return (couple.value mod couple.modulo /= 0) and nombrepremier(couple.modulo)
+	return (couple.value mod couple.modulo /= 0) and nombrepremier(couple.modulo);
 end fermatpossible;
 ----------------------------
 function nombrepremier (val : in integer) return boolean is
 --traite une valeur et retourne vrai si elle est premier ou faux.
+i : integer :=2;
 begin
 	while i<val-1 and then val mod i /= 0 loop
 		i:=i+1;
