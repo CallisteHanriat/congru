@@ -1,6 +1,6 @@
 With ada.Text_IO, Ada.Integer_Text_IO; 
 Use ada.Text_IO, Ada.Integer_Text_IO ;
-
+--ajout information
 package body p_congruence is
 
 procedure traitement1 (couple : in tr_couple) is
