@@ -3,14 +3,25 @@ Use ada.Text_IO, Ada.Integer_Text_IO ;
 --ajout information
 package body p_congruence is
 
-procedure traitement1 (couple : in tr_couple) is
---traite le couple, pour retourner congru.
-
+procedure affichage_congruence(couple : in tr_couple) is
+--affiche la congruence.
 begin
+	new_line;
+	put("votre congruence pour : ");
+	new_line;
+	put(couple.value); put(" puissance "); put(couple.puiss); put(" congru "); put(couple.congru); put("[");put(couple.modulo);put("]");
+end affichage_congruence;
+---------------------------
+procedure traitement1 (c : in tr_couple) is
+--traite le couple, pour retourner congru.
+couple : tr_couple;
+--creation de couple qui permet d'editer la valeur
+--et d'éviter une erreur 'in not allowed'
+begin
+	couple := c;
 	if couple.value**couple.puiss < 2**30 then
-		put("votre congruence pour : ");
-		new_line;
-		put(couple.value); put(" puissance "); put(couple.puiss); put(" congru "); put(congruence(couple.value, couple.modulo)); put("[");put(couple.modulo);put("]");
+		couple.congru := congruence(couple.value**couple.puiss,couple.modulo);
+		affichage_congruence(couple);
 	end if;
 end traitement1;
 ----------------------------
