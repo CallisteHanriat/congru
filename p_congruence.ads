@@ -9,7 +9,7 @@ type tr_couple is record
 	modulo : integer;
 end record;
 
-procedure traitement1 (c: in tr_couple);
+procedure traitement1 (couple: in tr_couple);
 --traite le couple, pour retourner congru.
 
 function congruence (val : in integer; modulo: in integer) return integer;
