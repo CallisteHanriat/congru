@@ -1,12 +1,15 @@
 with p_congruence;
 use p_congruence;
-
+--01/11/2014 v0.1
 procedure congru is
 couple : tr_couple;
 begin
-	couple.value := 5;
-	couple.puiss := 5;
-	couple.modulo := 5;
+	put("entrez une valeur : ");
+	get(couple.value);
+	put("entrez une puiss : ");
+	get(couple.puiss);
+	put("entrez un modulo : ");
+	get(couple.modulo);
 	
 	traitement1(couple);
 end congru;
