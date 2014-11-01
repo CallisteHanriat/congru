@@ -1,1 +1,7 @@
 BONJOUR
+
+voici un programme qui calcul des congruence. 
+
+v0.1.1 => permet uniquement de calculer des congruence pour des chiffres <2^30
+
+Master => on tend vers un calcul de congruence pour des chiffres infini (fermat à utiliser entre autre + fonctions complexes)
