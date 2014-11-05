@@ -49,14 +49,15 @@ begin
 	else	return true;
 	end if;
 end nombrepremier;
-
 ----------------------------
-
 function premier_cong_un(couple : in tr_couple) return integer is
 -- --traite un couple et retourne un valeur qui représente la puissance pour laquelle c'est congru à 1.
+i=integer:=1;
 begin
-
-
+	while i < couple.puiss+1 and then couple.value**i mod couple.modulo /= 1 loop
+		i:=i+1;
+	end loop;
+	return i;
 end rech_cong_un;
 
 
