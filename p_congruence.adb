@@ -52,10 +52,12 @@ end nombrepremier;
 
 ----------------------------
 
-function rech_cong_un(couple : in tr_couple) return integer is
+function premier_cong_un(couple : in tr_couple) return integer is
 -- --traite un couple et retourne un valeur qui représente la puissance pour laquelle c'est congru à 1.
 begin
 
 
 end rech_cong_un;
+
+
 end p_congruence;
