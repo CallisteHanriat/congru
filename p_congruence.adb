@@ -21,8 +21,11 @@ begin
 	couple := c;
 	if couple.value**couple.puiss < 2**30 then
 		couple.congru := congruence(couple.value**couple.puiss,couple.modulo);
-		affichage_congruence(couple);
+
+	-- pour la V 0.2
+	else	couple.congru := congru_by_multiple(couple);
 	end if;
+	affichage_congruence(couple);
 end traitement1;
 ----------------------------
 function congruence (val : in integer; modulo: in integer) return integer is
