@@ -12,6 +12,5 @@ begin
 	get(couple.puiss);
 	put("entrez un modulo : ");
 	get(couple.modulo);
-	
 	traitement1(couple);
 end congru;

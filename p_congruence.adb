@@ -18,13 +18,15 @@ couple : tr_couple;
 --creation de couple qui permet d'editer la valeur
 --et d'éviter une erreur 'in not allowed'
 begin
+	--savoir gérer les exeptions pour ici.
 	couple := c;
-	if couple.value**couple.puiss < 2**30 then
-		couple.congru := congruence(couple.value**couple.puiss,couple.modulo);
+	--if couple.value**couple.puiss < 2**30 then
+	--	couple.congru := congruence(couple.value**couple.puiss,couple.modulo);
 
 	-- pour la V 0.2
-	else	couple.congru := congru_by_multiple(couple);
-	end if;
+	--else	
+	couple.congru := congru_by_multiple(couple);
+	--end if;
 	affichage_congruence(couple);
 end traitement1;
 ----------------------------
@@ -55,24 +57,25 @@ end nombrepremier;
 ----------------------------
 function premier_cong_un(couple : in tr_couple) return integer is
 -- --traite un couple et retourne un valeur qui représente la puissance pour laquelle c'est congru à 1.
-i=integer:=1;
+i:integer:=1;
 begin
 	while i < couple.puiss+1 and then couple.value**i mod couple.modulo /= 1 loop
 		i:=i+1;
 	end loop;
 	return i;
-end rech_cong_un;
+end premier_cong_un;
 ----------------------------
-function congru_by_multiple(couple : in tr_couple) return integer is
+function congru_by_multiple(c : in tr_couple) return integer is
 --traite un couple et ressort un integer qui est la congruence couple.congru.
 i: integer :=1;
-begin
+couple : tr_couple := c;
+begin	
 	couple.congru:=couple.value mod couple.modulo;
 	while i<couple.puiss+1 loop
 		couple.congru := couple.congru*couple.value mod couple.modulo;
 		i:=i+1;
 	end loop;
-	return modulo;
+	return couple.congru;
 end congru_by_multiple;
 
 end p_congruence;
