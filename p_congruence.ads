@@ -24,6 +24,9 @@ function fermatpossible (couple : in tr_couple) return boolean;
 function nombrepremier (val : in integer) return boolean;
 --traite une valeur et retourne vrai si elle est premier ou faux.
 
+function congru_by_multiple(couple : in tr_couple) return integer;
+--traite un couple et ressort un integer qui est la congruence couple.congru.
+
 function premier_cong_un (couple : in tr_couple) return integer;
 --traite un couple et retourne un valeur qui représente la puissance pour laquelle c'est congru à 1.
 end p_congruence;

@@ -59,6 +59,17 @@ begin
 	end loop;
 	return i;
 end rech_cong_un;
-
+----------------------------
+function congru_by_multiple(couple : in tr_couple) return integer is
+--traite un couple et ressort un integer qui est la congruence couple.congru.
+i: integer :=1;
+begin
+	couple.congru:=couple.value mod couple.modulo;
+	while i<couple.puiss+1 loop
+		couple.congru := couple.congru*couple.value mod couple.modulo;
+		i:=i+1;
+	end loop;
+	return modulo;
+end congru_by_multiple;
 
 end p_congruence;
