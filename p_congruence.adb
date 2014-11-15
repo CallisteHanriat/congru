@@ -20,11 +20,13 @@ couple : tr_couple;
 begin
 	--savoir gérer les exeptions pour ici.
 	couple := c;
+	-- appeler le if est impossible si on est dans le constraint error. 
 	--if couple.value**couple.puiss < 2**30 then
 	--	couple.congru := congruence(couple.value**couple.puiss,couple.modulo);
 
 	-- pour la V 0.2
 	--else	
+	
 	couple.congru := congru_by_multiple(couple);
 	--end if;
 	affichage_congruence(couple);
@@ -74,7 +76,7 @@ begin
 	new_line;
 	while i<couple.puiss loop
 		affichage_congruence(couple);
-		couple.congru := couple.congru*couple.value mod couple.modulo;
+		couple.congru := congruence((couple.congru*couple.value), couple.modulo);
 		i:=i+1;
 	end loop;
 	return couple.congru;
