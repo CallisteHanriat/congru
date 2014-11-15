@@ -71,7 +71,9 @@ i: integer :=1;
 couple : tr_couple := c;
 begin	
 	couple.congru:=couple.value mod couple.modulo;
-	while i<couple.puiss+1 loop
+	new_line;
+	while i<couple.puiss loop
+		affichage_congruence(couple);
 		couple.congru := couple.congru*couple.value mod couple.modulo;
 		i:=i+1;
 	end loop;
